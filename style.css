@@ -591,6 +591,21 @@ section { position: relative; padding: 6.5rem 0; }
 }
 
 /* ==========================================================================
+   Das bieten wir Section (editable text sections)
+   ========================================================================== */
+.card-grid-offerings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+  }
+  @media (max-width: 980px) {
+    .card-grid-offerings { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .card-grid-offerings { grid-template-columns: 1fr; }
+  }
+
+/* ==========================================================================
    ABOUT / WHY FLAMELIGHT (editable text sections)
    ========================================================================== */
 .split {
