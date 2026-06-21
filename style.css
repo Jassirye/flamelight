@@ -1235,3 +1235,84 @@ section { position: relative; padding: 6.5rem 0; }
   line-height: 1.7;
 }
 .faq-item[open] summary { border-bottom: 1px solid var(--line); }
+
+/* ==========================================================================
+   COMPARE TABLE (Viele Agenturen vs. Flamelight)
+   ========================================================================== */
+.compare-table {
+  max-width: 920px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.compare-row + .compare-row { border-top: 1px solid var(--line); }
+.compare-cell {
+  padding: 1.1rem 1.4rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.compare-cell--them {
+  color: var(--ink-faint);
+  border-right: 1px solid var(--line);
+}
+.compare-cell--them::before {
+  content: "–";
+  flex-shrink: 0;
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+.compare-cell--us {
+  color: var(--ink);
+}
+.compare-cell--us::before {
+  content: "";
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, var(--ember), var(--gold));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.compare-head .compare-cell {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 1.3rem 1.4rem;
+}
+.compare-head .compare-cell--them {
+  color: var(--ink-dim);
+  background: rgba(255,255,255,0.02);
+}
+.compare-head .compare-cell--them::before { content: ""; }
+.compare-head .compare-cell--us {
+  background: linear-gradient(135deg, rgba(255,45,107,0.14), rgba(124,31,160,0.14));
+  background-clip: padding-box;
+}
+.compare-head .compare-cell--us::before { content: ""; }
+.compare-head .compare-cell--us span {
+  background: linear-gradient(120deg, var(--gold-soft), var(--ember));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 700px) {
+  .compare-cell {
+    padding: 0.9rem 0.9rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .compare-head .compare-cell { font-size: 0.88rem; padding: 1rem 0.9rem; }
+  .compare-cell--us::before { width: 13px; height: 13px; }
+}
