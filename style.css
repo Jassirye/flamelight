@@ -1318,27 +1318,3 @@ section { position: relative; padding: 6.5rem 0; }
 }
 
 
-/* Streamerin-Sektion: Mobil = 1er + 2er, PC = 3er */
-.streamer-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.1rem;
-  margin-top: 1.6rem;
-}
-.streamer-solo {
-  display: none;
-}
-@media (max-width: 760px) {
-  .streamer-gallery {
-    display: none;
-  }
-  .streamer-solo {
-    display: block;
-  }
-  .streamer-duo {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.1rem;
-    margin-top: 1.6rem;
-  }
-}
