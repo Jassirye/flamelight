@@ -751,6 +751,13 @@ section { position: relative; padding: 6.5rem 0; }
 @media (max-width: 760px) {
   .gallery-3 { grid-template-columns: repeat(2, 1fr); }
 }
+.prinzessin {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  margin-top: 1.6rem;
+}
+
 .gallery-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
